@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //---------------------------------------------------------------
 // funkcja realizuje operację binarną na argumentach w postaci ciągów
@@ -20,15 +21,16 @@ char* binary_op( char* result, char* arg1, char* arg2, int oper );
 
 
 int main(){
-    char arg1[] = "0011010000";
-    char arg2[] = "0000111111";
-    char res[ 65 ];
-    int oper = 0;
+    char arg1[] = "1111";
+    char arg2[] = "0000000000";
+    char *res=malloc(10);
+    int oper = 3;
 
     printf("Argument 1: %s\n", arg1 );
     printf("Argument 2: %s\n", arg2 );
-    //printf("Operation : %d\n", oper );
+    printf("Operation : %d\n", oper );
     printf("Result    : %s\n", binary_op( res, arg1, arg2, oper ) );
+    free(res);
     return 0;
 }
 
